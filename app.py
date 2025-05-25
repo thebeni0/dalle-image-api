@@ -33,6 +33,11 @@ def generate_image():
         image_url = response.data[0].url
         return jsonify({"image_url": image_url})
 
-    except Exception as e:
-        print("IMAGE GENERATION ERROR:", str(e))
+    except openai.OpenAIError as e:
+        print("OPENAI API ERROR:", e)
         return jsonify({"error": str(e)}), 500
+    except Exception as e:
+        print("UNEXPECTED ERROR:", e)
+        return jsonify({"error": str(e)}), 500
+
+
