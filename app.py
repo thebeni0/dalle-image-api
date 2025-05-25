@@ -19,7 +19,11 @@ def generate_image():
         return jsonify({"error": "Invalid prompt"}), 400
 
     prompt = prompt.strip()[:100]  # Truncate to avoid long prompt issues
-    cartoon_prompt = f"cartoon for kids showing friendly robots: {prompt}"
+    cartoon_prompt = (
+        f"cartoon-style illustration for kids, showing a cute and friendly robot in a colorful environment. "
+        f"The robot should look expressive and animated. Scene: {prompt}"
+    )
+
 
     try:
         print("FINAL PROMPT:", cartoon_prompt)
