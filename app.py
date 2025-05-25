@@ -28,7 +28,6 @@ def generate_image():
         image_url = response.data[0].url
         return jsonify({"image_url": image_url})
 
-
     except Exception as e:
         print("IMAGE GENERATION ERROR:", str(e))
         return jsonify({"error": str(e)}), 500
