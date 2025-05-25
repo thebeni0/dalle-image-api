@@ -17,15 +17,17 @@ def generate_image():
         return jsonify({"error": "Prompt required"}), 400
 
     try:
-        response = openai.Image.create(
+        response = openai.images.generate(
+            model="dall-e-3",
             prompt=prompt,
-            n=1,
-            size="512x512"
+            size="512x512",
+            n=1
         )
         print("RAW OPENAI RESPONSE:", response)
 
-        image_url = response["data"][0]["url"]
+        image_url = response.data[0].url
         return jsonify({"image_url": image_url})
+
 
     except Exception as e:
         print("IMAGE GENERATION ERROR:", str(e))
