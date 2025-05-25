@@ -22,6 +22,7 @@ def generate_image():
     cartoon_prompt = f"cartoon for kids showing friendly robots: {prompt}"
 
     try:
+        print("FINAL PROMPT:", cartoon_prompt)
         response = openai.images.generate(
             model="dall-e-3",
             prompt=cartoon_prompt,
