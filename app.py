@@ -19,12 +19,12 @@ def generate_image():
         return jsonify({"error": "Invalid prompt"}), 400
 
     prompt = prompt.strip()[:100]  # Truncate to avoid long prompt issues
-    cartoon_prompt = (
-        "cartoon-style illustration for kids, showing Sprocket the Robot — a small, friendly blue robot "
-        "with round eyes, orange ear panels, a chest power button, and an antenna with a glowing tip — "
-        "in a colorful environment. Sprocket should appear in every scene looking expressive and animated. "
-        f"Scene: {prompt}"
-    )
+cartoon_prompt = (
+    "cartoon-style illustration for kids, showing Sprocket the Robot — a small blue robot with a square head, "
+    "round yellow eyes, orange speaker-like ears, a glowing orange antenna, and segmented arms and legs. "
+    "He has a panel of orange and yellow buttons on his chest. Sprocket is expressive and always looks brave or curious. "
+    f"Scene: {prompt}"
+)
 
 
 
