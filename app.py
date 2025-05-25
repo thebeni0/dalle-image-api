@@ -20,9 +20,12 @@ def generate_image():
 
     prompt = prompt.strip()[:100]  # Truncate to avoid long prompt issues
     cartoon_prompt = (
-        f"cartoon-style illustration for kids, showing a cute and friendly robot in a colorful environment. "
-        f"The robot should look expressive and animated. Scene: {prompt}"
+        "cartoon-style illustration for kids, showing Sprocket the Robot — a small, friendly blue robot "
+        "with round eyes, orange ear panels, a chest power button, and an antenna with a glowing tip — "
+        "in a colorful environment. Sprocket should appear in every scene looking expressive and animated. "
+        f"Scene: {prompt}"
     )
+
 
 
     try:
