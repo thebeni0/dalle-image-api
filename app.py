@@ -11,13 +11,13 @@ openai.api_key = os.getenv("OPENAI_API_KEY")
 @app.route("/generate-image", methods=["POST"])
 def generate_image():
     data = request.get_json()
-    prompt = data.get("prompt", "")
-
+    # app.py (inside generate_image route)
+    prompt = data.get("prompt", "").strip()
     if not prompt:
         return jsonify({"error": "Prompt required"}), 400
 
-    # Enhance prompt to be more kid-friendly and cartoon-like
-    cartoon_prompt = f"cartoon illustration for kids featuring friendly robots in a colorful style: {prompt}"
+    # Truncate and decorate the prompt
+    cartoon_prompt = f"cartoon for kids showing friendly robots: {prompt[:100]}"
 
     try:
         response = openai.images.generate(
