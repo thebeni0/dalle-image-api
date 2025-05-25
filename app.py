@@ -16,14 +16,14 @@ def generate_image():
     if not prompt:
         return jsonify({"error": "Prompt required"}), 400
 
-        # Enhance prompt to be more kid-friendly and cartoon-like
+    # Enhance prompt to be more kid-friendly and cartoon-like
     cartoon_prompt = f"cartoon illustration for kids: {prompt}"
 
     try:
         response = openai.images.generate(
             model="dall-e-3",
-            prompt=prompt,
-            size="1024x1024",  # or use '1024x1792' for taller images,
+            prompt=cartoon_prompt,
+            size="1024x1024",
             n=1
         )
         print("RAW OPENAI RESPONSE:", response)
