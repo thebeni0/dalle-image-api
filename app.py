@@ -20,7 +20,7 @@ def generate_image():
         response = openai.images.generate(
             model="dall-e-3",
             prompt=prompt,
-            size="512x512",
+            size="1024x1024"  # or use '1024x1792' for taller images,
             n=1
         )
         print("RAW OPENAI RESPONSE:", response)
