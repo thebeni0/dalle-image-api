@@ -20,7 +20,7 @@ def generate_image():
 
     prompt = prompt.strip()[:100]  # Truncate to avoid long prompt issues
     cartoon_prompt = (
-        "cartoon-style illustration for kids, showing sprocket the rocket going through an adventure. Can you create a picture that looks like this"
+        "cartoon-style illustration for kids"
         f"Scene: {prompt}"
     )
 
